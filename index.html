@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VIA — Пропуск на платные трассы и техосмотр</title>
+  <meta name="description" content="Покупайте пропуск на платные трассы России и записывайтесь на техосмотр онлайн. Быстро, прозрачно, без очередей." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="page-progress" aria-hidden="true"><span></span></div>
+
+  <header class="header" id="top">
+    <div class="header__inner container">
+      <a class="logo" href="#top" aria-label="VIA — на главную">
+        <span class="logo__mark"></span>
+        <span class="logo__text">VIA</span>
+      </a>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <a class="is-active" href="#top">Главная</a>
+        <a href="#about">О сервисе</a>
+        <a href="#widget">Пропуск</a>
+        <a href="#routes">Трассы</a>
+        <a href="#process">Как работаем</a>
+        <a href="#inspection">Техосмотр</a>
+      </nav>
+
+      <div class="header__actions">
+        <div class="header__contacts">
+          <a class="header__phone" href="tel:+78001234567">8 800 123-45-67</a>
+          <span class="header__hours">Ежедневно, 24/7</span>
+        </div>
+        <a class="btn btn--dark btn--sm header__cta" href="#widget" data-magnetic>
+          Купить пропуск
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <button class="nav-toggle" type="button" aria-label="Открыть меню" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav" hidden>
+    <a href="#top">Главная</a>
+    <a href="#about">О сервисе</a>
+    <a href="#widget">Пропуск</a>
+    <a href="#routes">Трассы</a>
+    <a href="#process">Как работаем</a>
+    <a href="#inspection">Техосмотр</a>
+    <a class="btn btn--dark" href="#widget">Купить пропуск</a>
+  </div>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__masks">
+          <div class="hero__col hero__col--1" data-col="0">
+            <div class="hero__col-media">
+              <img src="assets/hero-highway.jpg" alt="" />
+            </div>
+          </div>
+          <div class="hero__slit" aria-hidden="true">
+            <span class="hero__slit-beam"></span>
+            <span class="hero__slit-spark"></span>
+            <span class="hero__slit-spark"></span>
+            <span class="hero__slit-spark"></span>
+          </div>
+          <div class="hero__col hero__col--2" data-col="1">
+            <div class="hero__col-media">
+              <img src="assets/hero-highway.jpg" alt="" />
+            </div>
+          </div>
+          <div class="hero__slit" aria-hidden="true">
+            <span class="hero__slit-beam"></span>
+            <span class="hero__slit-spark"></span>
+            <span class="hero__slit-spark"></span>
+            <span class="hero__slit-spark"></span>
+          </div>
+          <div class="hero__col hero__col--3" data-col="2">
+            <div class="hero__col-media">
+              <img src="assets/hero-highway.jpg" alt="" />
+            </div>
+          </div>
+          <div class="hero__slit" aria-hidden="true">
+            <span class="hero__slit-beam"></span>
+            <span class="hero__slit-spark"></span>
+            <span class="hero__slit-spark"></span>
+            <span class="hero__slit-spark"></span>
+          </div>
+          <div class="hero__col hero__col--4" data-col="3">
+            <div class="hero__col-media">
+              <img src="assets/hero-highway.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__bottom">
+          <div class="hero__copy">
+            <h1 class="hero__title">VIA</h1>
+            <p class="hero__lead">Проезд без остановок и техосмотр — сервис, который думает на перспективу</p>
+            <div class="hero__actions">
+              <button class="btn btn--light btn--arrow" type="button" data-lead-open data-lead-type="pass" data-magnetic>
+                Получить пропуск
+                <span class="btn__orb" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </button>
+              <button class="btn btn--ghost-hero btn--arrow" type="button" data-lead-open data-lead-type="callback">
+                Оставить заявку
+                <span class="btn__orb btn__orb--glass" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </button>
+              <button class="btn btn--ghost-hero btn--arrow" type="button" data-lead-open data-lead-type="to">
+                Запись на ТО
+                <span class="btn__orb btn__orb--glass" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </button>
+            </div>
+          </div>
+          <ul class="hero__words">
+            <li>Скорость</li>
+            <li>Прозрачность</li>
+            <li>Безопасность</li>
+            <li>Свобода</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container about__grid">
+        <div class="about__copy">
+          <h2>Сервис, который убирает лишнее с дороги</h2>
+          <p>
+            VIA объединяет покупку пропусков на платные трассы и запись на техосмотр. Мы сделали путь от выбора маршрута до готового документа коротким: без лишних форм, без звонков «куда ехать» и без сюрпризов на шлагбауме.
+          </p>
+          <a class="link-circle" href="#widget">
+            Начать оформление
+            <span aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </a>
+        </div>
+
+        <div class="stats">
+          <article class="stat">
+            <strong>7+</strong>
+            <span>лет на рынке цифровых дорожных услуг</span>
+          </article>
+          <article class="stat">
+            <strong>120+</strong>
+            <span>пунктов техосмотра в партнёрской сети</span>
+          </article>
+          <article class="stat">
+            <strong>18</strong>
+            <span>платных трасс и участков покрытия</span>
+          </article>
+          <article class="stat">
+            <strong>98%</strong>
+            <span>клиентов оформляют повторно</span>
+          </article>
+        </div>
+      </div>
+
+      <div class="trust">
+        <div class="container trust__row" aria-label="Партнёры">
+          <span class="trust__label">Работаем с</span>
+          <div class="trust__logos">
+            <span>Автодор</span>
+            <span>СК Мост</span>
+            <span>Главная дорога</span>
+            <span>Северо-Запад</span>
+            <span>Дороги России</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="widget-section" id="widget">
+      <div class="container">
+        <div class="section-head">
+          <h2>Оформите за пару минут</h2>
+          <p>Один виджет — два сервиса. Выберите, что нужно сейчас.</p>
+        </div>
+
+        <div class="bento">
+          <div class="bento__main card-surface" id="purchaseWidget">
+            <div class="widget-tabs" role="tablist" aria-label="Тип услуги">
+              <button class="widget-tab is-active" role="tab" aria-selected="true" data-tab="pass" type="button">Пропуск на трассу</button>
+              <button class="widget-tab" role="tab" aria-selected="false" data-tab="to" type="button">Техосмотр</button>
+            </div>
+
+            <div class="widget-panels">
+              <form class="widget-panel is-active" id="panelPass" data-panel="pass" novalidate>
+                <div class="field-row">
+                  <label class="field">
+                    <span>Трасса</span>
+                    <select name="route" required>
+                      <option value="m11">М-11 «Нева» — Москва → СПб</option>
+                      <option value="m12">М-12 «Восток» — Москва → Казань</option>
+                      <option value="ckad">ЦКАД — Центральная кольцевая</option>
+                      <option value="m4">М-4 «Дон» — участки</option>
+                      <option value="western">ЗСД — Санкт-Петербург</option>
+                    </select>
+                  </label>
+                  <label class="field">
+                    <span>Тип ТС</span>
+                    <select name="vehicle" required>
+                      <option value="car">Легковой автомобиль</option>
+                      <option value="suv">Внедорожник / кроссовер</option>
+                      <option value="van">Микроавтобус</option>
+                      <option value="truck">Грузовой до 12 т</option>
+                    </select>
+                  </label>
+                </div>
+
+                <div class="field-row">
+                  <label class="field">
+                    <span>Дата поездки</span>
+                    <input type="date" name="date" required />
+                  </label>
+                  <label class="field">
+                    <span>Госномер</span>
+                    <input type="text" name="plate" placeholder="А123ВС 777" maxlength="12" required autocomplete="off" />
+                  </label>
+                </div>
+
+                <div class="pass-options" role="radiogroup" aria-label="Тариф пропуска">
+                  <label class="pass-option is-selected">
+                    <input type="radio" name="tariff" value="single" checked />
+                    <span class="pass-option__top">Разовый</span>
+                    <span class="pass-option__price">от 450 ₽</span>
+                    <span class="pass-option__note">Один проезд в выбранную дату</span>
+                  </label>
+                  <label class="pass-option">
+                    <input type="radio" name="tariff" value="day" />
+                    <span class="pass-option__top">Суточный</span>
+                    <span class="pass-option__price">от 1 290 ₽</span>
+                    <span class="pass-option__note">Неограниченно в течение суток</span>
+                  </label>
+                  <label class="pass-option">
+                    <input type="radio" name="tariff" value="month" />
+                    <span class="pass-option__top">Месячный</span>
+                    <span class="pass-option__price">от 4 900 ₽</span>
+                    <span class="pass-option__note">Для регулярных поездок</span>
+                  </label>
+                </div>
+
+                <div class="widget-summary">
+                  <div>
+                    <span class="widget-summary__label">К оплате</span>
+                    <strong class="widget-summary__price" id="passPrice">450 ₽</strong>
+                  </div>
+                  <button class="btn btn--accent" type="submit" data-magnetic>
+                    Купить пропуск
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                </div>
+              </form>
+
+              <form class="widget-panel" id="panelTo" data-panel="to" novalidate hidden>
+                <div class="field-row">
+                  <label class="field">
+                    <span>Город</span>
+                    <select name="city" required>
+                      <option value="msk">Москва</option>
+                      <option value="spb">Санкт-Петербург</option>
+                      <option value="kzn">Казань</option>
+                      <option value="nn">Нижний Новгород</option>
+                      <option value="ekb">Екатеринбург</option>
+                    </select>
+                  </label>
+                  <label class="field">
+                    <span>Категория ТС</span>
+                    <select name="category" required>
+                      <option value="m1">M1 — легковые</option>
+                      <option value="n1">N1 — грузовики до 3,5 т</option>
+                      <option value="l">L — мотоциклы</option>
+                      <option value="m2">M2 / M3 — автобусы</option>
+                    </select>
+                  </label>
+                </div>
+
+                <div class="field-row">
+                  <label class="field">
+                    <span>Дата визита</span>
+                    <input type="date" name="visit" required />
+                  </label>
+                  <label class="field">
+                    <span>Время</span>
+                    <select name="time" required>
+                      <option value="09:00">09:00</option>
+                      <option value="10:30">10:30</option>
+                      <option value="12:00">12:00</option>
+                      <option value="14:00">14:00</option>
+                      <option value="16:30">16:30</option>
+                      <option value="18:00">18:00</option>
+                    </select>
+                  </label>
+                </div>
+
+                <div class="field-row">
+                  <label class="field">
+                    <span>Госномер</span>
+                    <input type="text" name="plateTo" placeholder="А123ВС 777" maxlength="12" required />
+                  </label>
+                  <label class="field">
+                    <span>Телефон</span>
+                    <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required />
+                  </label>
+                </div>
+
+                <div class="widget-summary">
+                  <div>
+                    <span class="widget-summary__label">Стоимость ТО</span>
+                    <strong class="widget-summary__price" id="toPrice">от 1 100 ₽</strong>
+                  </div>
+                  <button class="btn btn--accent" type="submit" data-magnetic>
+                    Записаться на ТО
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <aside class="bento__side">
+            <article class="side-card card-surface side-card--pass">
+              <img src="assets/pass-device.jpg" alt="Транспондер для платных дорог" width="640" height="640" loading="lazy" />
+              <div class="side-card__body">
+                <h3>Транспондер и e-pass</h3>
+                <p>Электронный пропуск привязывается к госномеру. На пункте — просто проезжайте.</p>
+              </div>
+            </article>
+            <article class="side-card card-surface side-card--to" id="inspection">
+              <img src="assets/techosmotr.jpg" alt="Станция техосмотра" width="800" height="600" loading="lazy" />
+              <div class="side-card__body">
+                <h3>Техосмотр без ожидания</h3>
+                <p>Выберите пункт, слот и получите диагностическую карту в день визита.</p>
+                <a class="text-link" href="#widget" data-switch-tab="to">Открыть запись →</a>
+              </div>
+            </article>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="routes" id="routes">
+      <div class="container">
+        <div class="section-head section-head--row">
+          <div>
+            <h2>Каталог трасс</h2>
+            <p>Популярные направления с мгновенной выдачей пропуска</p>
+          </div>
+          <div class="slider-nav">
+            <button type="button" class="icon-btn" id="routesPrev" aria-label="Предыдущие трассы">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M11 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button type="button" class="icon-btn" id="routesNext" aria-label="Следующие трассы">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="routes__track" id="routesTrack">
+          <article class="route-card">
+            <div class="route-card__media">
+              <img src="assets/route-m11.jpg" alt="Трасса М-11 Нева" width="720" height="960" loading="lazy" />
+            </div>
+            <h3>М-11 «Нева»</h3>
+            <p>Москва — Санкт-Петербург · 4000+ проездов/сутки</p>
+          </article>
+          <article class="route-card">
+            <div class="route-card__media">
+              <img src="assets/route-m12.jpg" alt="Трасса М-12 Восток" width="720" height="960" loading="lazy" />
+            </div>
+            <h3>М-12 «Восток»</h3>
+            <p>Москва — Казань · скоростной коридор</p>
+          </article>
+          <article class="route-card">
+            <div class="route-card__media">
+              <img src="assets/route-ckad.jpg" alt="ЦКАД вечер" width="720" height="960" loading="lazy" />
+            </div>
+            <h3>ЦКАД</h3>
+            <p>Центральная кольцевая · круглосуточный доступ</p>
+          </article>
+          <article class="route-card">
+            <div class="route-card__media">
+              <img src="assets/hero-highway.jpg" alt="ЗСД Санкт-Петербург" width="720" height="960" loading="lazy" />
+            </div>
+            <h3>ЗСД</h3>
+            <p>Западный скоростной диаметр · СПб</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="process">
+      <div class="container process__grid">
+        <div class="process__visual">
+          <img src="assets/process-bridge.jpg" alt="Современная транспортная инфраструктура" width="720" height="960" loading="lazy" />
+          <div class="process__badge">Бесплатная<br />консультация</div>
+        </div>
+
+        <div class="process__list">
+          <h2>Как мы работаем</h2>
+          <ol>
+            <li>
+              <span class="step-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M21 15a4 4 0 01-4 4H8l-5 3V7a4 4 0 014-4h10a4 4 0 014 4v8z" stroke="currentColor" stroke-width="1.6"/></svg>
+              </span>
+              <div>
+                <h3>Вы выбираете услугу</h3>
+                <p>Пропуск на трассу или слот техосмотра — в одном виджете, без переключений между сайтами.</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-3-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </span>
+              <div>
+                <h3>Система подбирает тариф</h3>
+                <p>Учитываем тип ТС, дату и маршрут. Цена фиксируется до оплаты — без скрытых доплат.</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 10h4M7 14h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </span>
+              <div>
+                <h3>Оплата и мгновенная выдача</h3>
+                <p>После оплаты пропуск или подтверждение записи приходит на почту и в личный кабинет.</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M4 16l4-8 4 5 3-4 5 7H4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+              </span>
+              <div>
+                <h3>Вы просто едете</h3>
+                <p>На пункте оплаты — свободный проезд. На ТО — встреча по записи без живой очереди.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container cta-band__inner">
+        <div>
+          <h2>Готовы к спокойной дороге?</h2>
+          <p>Оформите пропуск или запишитесь на техосмотр прямо сейчас — займёт меньше трёх минут.</p>
+        </div>
+        <a class="btn btn--light" href="#widget" data-magnetic>
+          Открыть виджет
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <a class="logo" href="#top">
+          <span class="logo__mark"></span>
+          <span class="logo__text">VIA</span>
+        </a>
+        <p class="footer__tag">Цифровой проезд и техосмотр для тех, кто ценит время.</p>
+      </div>
+      <div>
+        <h4>Сервис</h4>
+        <a href="#widget">Пропуск</a>
+        <a href="#inspection">Техосмотр</a>
+        <a href="#routes">Трассы</a>
+      </div>
+      <div>
+        <h4>Компания</h4>
+        <a href="#about">О сервисе</a>
+        <a href="#process">Как работаем</a>
+        <a href="mailto:hello@via-pass.ru">hello@via-pass.ru</a>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <a href="tel:+78001234567">8 800 123-45-67</a>
+        <p>Ежедневно, 24/7</p>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© 2026 VIA. Все права защищены.</span>
+      <span>Демо-интерфейс. Оплата не производится.</span>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <div class="lead-modal" id="leadModal" hidden>
+    <div class="lead-modal__backdrop" data-lead-close></div>
+    <div class="lead-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="leadTitle">
+      <button class="lead-modal__close" type="button" data-lead-close aria-label="Закрыть">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <p class="lead-modal__eyebrow">Заявка VIA</p>
+      <h2 id="leadTitle">Оставить контакты</h2>
+      <p class="lead-modal__text">Перезвоним за 2 минуты и поможем оформить услугу.</p>
+      <form id="leadForm" novalidate>
+        <input type="hidden" name="type" id="leadType" value="callback" />
+        <label class="field">
+          <span>Имя</span>
+          <input type="text" name="name" placeholder="Как к вам обращаться" required autocomplete="name" />
+        </label>
+        <label class="field">
+          <span>Телефон</span>
+          <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required autocomplete="tel" />
+        </label>
+        <label class="field">
+          <span>Комментарий</span>
+          <input type="text" name="comment" placeholder="Маршрут, дата или вопрос" />
+        </label>
+        <button class="btn btn--accent" type="submit" data-magnetic>
+          Отправить заявку
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
